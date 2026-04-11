@@ -8,10 +8,12 @@ import Experience from './components/Experience';
 import Certificates from './components/Certificates';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
