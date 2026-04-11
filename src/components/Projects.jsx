@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Github, ArrowUpRight } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
@@ -8,42 +8,42 @@ const Projects = () => {
       description: 'A regional health tracker designed to monitor water quality and disease outbreaks.',
       tags: ['React Native', 'Expo', 'React.js', 'TypeScript'],
       github: 'https://github.com/mithuneesh-k/HealthDrop-HealthSurveillanceSystem',
-      link: '#'
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800' // Medical tech context
     },
     {
       title: 'Morse-Maxx & Tkinter GUI',
       description: 'A Python-powered Morse converter with a robust Graphical User Interface built using Tkinter.',
       tags: ['Python', 'Tkinter (GUI)', 'Automation'],
       github: 'https://github.com/mithuneesh-k/Morse-Maxx',
-      link: '#'
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800' // Code/Terminal matrix context
     },
     {
       title: 'AttMate (Smart Attendance)',
       description: 'Digital management system for high-accuracy student attendance tracking.',
       tags: ['Python', 'System Design', 'Management'],
       github: 'https://github.com/mithuneesh-k/AttMate',
-      link: '#'
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800' // Dashboard system context
     },
     {
       title: 'FilmPedia',
       description: 'Responsive movie discovery platform with high-fidelity web design.',
       tags: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Web Design'],
       github: 'https://github.com/mithuneesh-k/FilmPedia',
-      link: '#'
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800' // Media app context
     },
     {
       title: 'tadaTasks',
       description: 'A task management application built with a focus on responsive UI/UX.',
       tags: ['Bootstrap', 'Tailwind', 'HTML', 'CSS'],
       github: 'https://github.com/mithuneesh-k/tadaTasks',
-      link: '#'
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fd3af?auto=format&fit=crop&q=80&w=800' // Productivity context
     },
     {
       title: 'Number-word-converter',
       description: 'Utility tool for large-scale numeric to semantic word conversion.',
       tags: ['Python', 'CustomTkinter', 'Utility'],
       github: 'https://github.com/mithuneesh-k/Number-word-converter',
-      link: '#'
+      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800' // Microprocessor/Utility context
     }
   ];
 
@@ -63,10 +63,20 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div key={project.title} className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-primary-blue/30 transition-all flex flex-col hover:shadow-2xl hover:shadow-blue-500/5">
-              <div className="aspect-video bg-slate-100 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-primary-blue/0 group-hover:bg-primary-blue/5 transition-colors"></div>
-                <div className="px-6 py-3 bg-white/80 backdrop-blur rounded-full border border-white shadow-sm font-bold text-slate-400 group-hover:text-primary-blue transition-colors text-xs uppercase tracking-widest italic font-inter shadow-inner">Build Details</div>
+              
+              {/* Image Context Header */}
+              <div className="aspect-video bg-[#0f172a] flex items-center justify-center relative overflow-hidden">
+                <img 
+                   src={project.image} 
+                   alt={project.title} 
+                   className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40 group-hover:opacity-70 group-hover:scale-110 transition-all duration-1000 ease-out" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-primary-blue/20 to-transparent mix-blend-multiply"></div>
+                <div className="relative px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-xl font-bold text-white group-hover:bg-white group-hover:text-primary-blue transition-all duration-500 text-xs uppercase tracking-widest italic font-inter">
+                  Build Details
+                </div>
               </div>
+
               <div className="p-8 flex-grow flex flex-col">
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map(tag => (
@@ -83,9 +93,6 @@ const Projects = () => {
                 <div className="flex gap-4 pt-6 border-t border-slate-50">
                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-slate-400 hover:text-slate-900 transition-colors flex items-center gap-2">
                       <Github className="w-4 h-4" /> Source
-                   </a>
-                   <a href={project.link} className="text-sm font-bold text-slate-400 hover:text-primary-blue transition-colors flex items-center gap-2">
-                      <ExternalLink className="w-4 h-4" /> Preview
                    </a>
                 </div>
               </div>
