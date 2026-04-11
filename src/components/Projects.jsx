@@ -4,6 +4,13 @@ import { Github, ArrowUpRight } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
+      title: 'Mithfolio (Personal Portfolio)',
+      description: 'A custom-built, highly responsive single-page engineering portfolio featuring dynamic routing and a premium, minimalist UI system.',
+      tags: ['React 19', 'Tailwind CSS v4', 'Vite', 'UI/UX'],
+      github: '#',
+      image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800' // Modern web code context
+    },
+    {
       title: 'HealthDrop (HealthSurveillanceSystem)',
       description: 'A regional health tracker designed to monitor water quality and disease outbreaks.',
       tags: ['React Native', 'Expo', 'React.js', 'TypeScript'],
