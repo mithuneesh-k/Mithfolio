@@ -8,35 +8,35 @@ const Projects = () => {
       description: 'A custom-built, highly responsive single-page engineering portfolio featuring dynamic routing and a premium, minimalist UI system.',
       tags: ['React 19', 'Tailwind CSS v4', 'Vite', 'UI/UX'],
       github: '#',
-      image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800' // Modern web code context
+      image: '/assets/Mithfolio-1.png'
     },
     {
       title: 'HealthDrop (HealthSurveillanceSystem)',
       description: 'A regional health tracker designed to monitor water quality and disease outbreaks.',
       tags: ['React Native', 'Expo', 'React.js', 'TypeScript'],
       github: 'https://github.com/mithuneesh-k/HealthDrop-HealthSurveillanceSystem',
-      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800' // Medical tech context
+      image: '/assets/healthdrop-1.png'
     },
     {
       title: 'AttMate (Smart Attendance)',
       description: 'Digital management system for high-accuracy student attendance tracking.',
       tags: ['Python', 'System Design', 'Management'],
       github: 'https://github.com/mithuneesh-k/AttMate',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800' // Dashboard system context
+      image: '/assets/attmate.png'
     },
     {
       title: 'FilmPedia',
       description: 'Responsive movie discovery platform with high-fidelity web design.',
       tags: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Web Design'],
       github: 'https://github.com/mithuneesh-k/FilmPedia',
-      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800' // Media app context
+      image: '/assets/filmpedia.png'
     },
     {
       title: 'tadaTasks',
       description: 'A task management application built with a focus on responsive UI/UX.',
       tags: ['Bootstrap', 'Tailwind', 'HTML', 'CSS'],
       github: 'https://github.com/mithuneesh-k/tadaTasks',
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fd3af?auto=format&fit=crop&q=80&w=800' // Productivity context
+      image: '/assets/TadaTasks.png'
     },
     {
       title: 'Morse-Maxx & Tkinter GUI',
