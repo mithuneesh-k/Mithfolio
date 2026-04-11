@@ -1,5 +1,5 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin, ArrowUpRight } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, ArrowUpRight, Mail } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -67,12 +67,14 @@ const Experience = () => {
           ))}
         </div>
         
-        {/* Call to action */}
-        <div className="mt-32 p-12 rounded-[3rem] bg-slate-900 flex flex-col items-center text-center overflow-hidden relative">
-           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-blue/10 via-transparent to-transparent"></div>
-           <h4 className="text-2xl font-bold text-white mb-6 relative">Looking for a collaborative engineer?</h4>
-           <a href="mailto:mithuneesh.k@gmail.com" className="btn-primary relative flex items-center gap-2">
-              Let's Start a Project <ArrowUpRight className="w-4 h-4" />
+        {/* Call to action / Contact Section */}
+        <div className="mt-32 p-12 md:p-16 rounded-[3rem] bg-slate-900 flex flex-col items-center text-center overflow-hidden relative">
+           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-blue/10 via-transparent to-transparent pointer-events-none"></div>
+           <h4 className="text-2xl md:text-3xl font-bold text-white mb-4 relative">Looking for a collaborative engineer?</h4>
+           <p className="text-slate-400 mb-8 relative font-medium">Get in touch directly via email.</p>
+           <a href="mailto:mithuneesh.k@gmail.com" className="btn-primary relative flex items-center gap-3 font-mono tracking-tight group hover:scale-105 transition-transform duration-300">
+              <Mail className="w-5 h-5 group-hover:-translate-y-1 transition-transform" /> 
+              mithuneesh.k@gmail.com
            </a>
         </div>
       </div>

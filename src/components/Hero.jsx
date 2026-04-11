@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MoveRight } from 'lucide-react';
+import { ArrowRight, MoveRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
@@ -28,8 +28,8 @@ const Hero = () => {
               Explore My Work
               <MoveRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <a href="mailto:mithuneesh.k@gmail.com" className="btn-secondary text-center px-8 py-4 text-base">
-              Establish Contact
+            <a href="mailto:mithuneesh.k@gmail.com" className="btn-secondary text-center px-8 py-4 text-base font-mono tracking-tight flex items-center justify-center gap-2">
+              <Mail className="w-4 h-4" /> mithuneesh.k@gmail.com
             </a>
           </div>
         </div>

@@ -11,13 +11,6 @@ const Projects = () => {
       image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800' // Medical tech context
     },
     {
-      title: 'Morse-Maxx & Tkinter GUI',
-      description: 'A Python-powered Morse converter with a robust Graphical User Interface built using Tkinter.',
-      tags: ['Python', 'Tkinter (GUI)', 'Automation'],
-      github: 'https://github.com/mithuneesh-k/Morse-Maxx',
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800' // Code/Terminal matrix context
-    },
-    {
       title: 'AttMate (Smart Attendance)',
       description: 'Digital management system for high-accuracy student attendance tracking.',
       tags: ['Python', 'System Design', 'Management'],
@@ -37,6 +30,13 @@ const Projects = () => {
       tags: ['Bootstrap', 'Tailwind', 'HTML', 'CSS'],
       github: 'https://github.com/mithuneesh-k/tadaTasks',
       image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fd3af?auto=format&fit=crop&q=80&w=800' // Productivity context
+    },
+    {
+      title: 'Morse-Maxx & Tkinter GUI',
+      description: 'A Python-powered Morse converter with a robust Graphical User Interface built using Tkinter.',
+      tags: ['Python', 'Tkinter (GUI)', 'Automation'],
+      github: 'https://github.com/mithuneesh-k/Morse-Maxx',
+      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800' // Code/Terminal matrix context
     },
     {
       title: 'Number-word-converter',

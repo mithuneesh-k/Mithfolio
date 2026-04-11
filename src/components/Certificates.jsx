@@ -9,7 +9,8 @@ const Certificates = () => {
       date: 'Apr 2026',
       id: '457325398',
       skills: ['AI Prompting', 'Prompt Engineering'],
-      highlight: null
+      highlight: null,
+      link: 'https://edu.exceedlms.com/student/award/JJXeZhNvUrqeqRx3BipZE3Rw'
     },
     {
       title: 'Vidamuyarchi Startup Bootcamp',
@@ -17,7 +18,8 @@ const Certificates = () => {
       date: 'Mar 2026',
       id: null,
       skills: ['Lean Startup', 'Business Development'],
-      highlight: 'Shortlisted: Top 7 out of 25 Startup Ideas'
+      highlight: 'Shortlisted: Top 7 out of 25 Startup Ideas',
+      link: null
     },
     {
       title: 'Vision Language Models (VLM) Bootcamp',
@@ -25,7 +27,8 @@ const Certificates = () => {
       date: 'Jan 2026',
       id: 'af97e072b819436e9ca8662d01d7e9d1',
       skills: ['CLIP', 'Qwen2.5-VL', 'Zero-Shot Learning', 'Computer Vision'],
-      highlight: 'Certificate of Excellence (Grade: 96%)'
+      highlight: 'Certificate of Excellence (Grade: 96%)',
+      link: 'https://courses.opencv.org/certificates/af97e072b819436e9ca8662d01d7e9d1'
     },
     {
       title: 'Python Developer',
@@ -33,7 +36,8 @@ const Certificates = () => {
       date: 'Oct 2025',
       id: null,
       skills: ['Python Programming'],
-      highlight: null
+      highlight: null,
+      link: 'https://api2.sololearn.com/v2/certificates/CC-VDJYAMPI/image/png?t=638952483362547553'
     },
     {
       title: 'Young Professional',
@@ -41,7 +45,8 @@ const Certificates = () => {
       date: 'Jul 2025',
       id: '240640-28642455-1016',
       skills: ['Communication', 'Accounting', 'Business Ethics'],
-      highlight: 'Career Edge Specialization'
+      highlight: 'Career Edge Specialization',
+      link: null
     },
     {
       title: 'Prompt Engineering',
@@ -49,7 +54,8 @@ const Certificates = () => {
       date: 'Jul 2025',
       id: null,
       skills: ['Prompt Engineering', 'Generative AI'],
-      highlight: null
+      highlight: null,
+      link: 'https://www.mygreatlearning.com/certificate/BGOVANNT'
     }
   ];
 
@@ -80,7 +86,14 @@ const Certificates = () => {
                      <CheckCircle2 className="w-4 h-4 text-emerald-500 opacity-60" />
                   </div>
                   <p className="text-primary-blue font-bold text-sm uppercase tracking-wide">{cert.org}</p>
-                  <p className="text-slate-400 text-xs mt-2 font-mono italic">{cert.id ? `ID: ${cert.id}` : 'Verified Credential'}</p>
+                  <p className="text-slate-400 text-xs mt-2 font-mono italic flex items-center flex-wrap gap-2">
+                    {cert.id ? `ID: ${cert.id}` : 'Verified Credential'}
+                    {cert.link && (
+                      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 ml-1 text-primary-blue hover:text-blue-700 hover:underline not-italic font-sans font-bold transition-colors">
+                        — View Origin <ExternalLink className="w-3 h-3" />
+                      </a>
+                    )}
+                  </p>
                 </div>
               </div>
 
