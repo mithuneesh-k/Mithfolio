@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Twitter, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, Code } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -16,7 +16,6 @@ const Footer = () => {
                  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/mithuneesh-k' },
                  { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/mithuneesh-kanagaraj-b9b220369/' },
                  { icon: <img src="https://leetcode.com/favicon.ico" alt="LeetCode" className="w-[18px] h-[18px] grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all" />, href: 'https://leetcode.com/u/mithuneesh-k/' },
-                 { icon: <Twitter className="w-5 h-5" />, href: '#' },
                  { icon: <Mail className="w-5 h-5" />, href: 'mailto:mithuneesh.k@gmail.com' }
                ].map((social, idx) => (
                  <a 
@@ -42,9 +41,8 @@ const Footer = () => {
              </nav>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-slate-50 flex flex-col md:flex-row justify-between items-center gap-4">
-           <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest">© 2026 Mithuneesh Kanagaraj. Coimbatore, India.</p>
-           <p className="text-slate-300 text-[10px] italic font-black uppercase tracking-tighter active:text-primary-blue select-none">Iterated with React & Tailwind CSS v4</p>
+        <div className="mt-20 pt-8 border-t border-slate-50 flex justify-center items-center">
+           <p className="text-slate-400 text-[10px] font-black uppercase tracking-widest text-center">© 2026 Mithuneesh Kanagaraj. Coimbatore, India.</p>
         </div>
       </div>
     </footer>

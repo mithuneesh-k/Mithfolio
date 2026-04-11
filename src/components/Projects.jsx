@@ -53,7 +53,7 @@ const Projects = () => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-xl text-left">
             <h2 className="text-sm font-bold tracking-[0.2em] text-primary-blue uppercase mb-4">Portfolio</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-0 leading-[1.1]">Featured Missions</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-0 leading-[1.1]">Projects</h3>
           </div>
           <p className="text-slate-500 font-medium max-w-xs md:text-right hidden lg:block">
             Architecting solutions from mobile surveillance to semantic automation tools.

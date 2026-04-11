@@ -185,12 +185,7 @@ const Skills = () => {
            </div>
         </div>
 
-        {/* Footer Statement */}
-        <div className="text-center pt-32 mt-32 border-t border-slate-50">
-           <p className="text-slate-300 font-bold uppercase tracking-[1em] text-xs">
-              Mithuneesh Kanagaraj / / Expertise Matrix / / 2026
-           </p>
-        </div>
+
       </div>
     </section>
   );
