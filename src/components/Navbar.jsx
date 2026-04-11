@@ -16,11 +16,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-50 py-4">
+    <nav className="bg-primary-blue shadow-lg sticky top-0 z-50 py-4">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold text-slate-900 group" onClick={() => setIsMobileMenuOpen(false)}>
-            Mithuneesh <span className="text-primary-blue inline-block group-hover:translate-x-1 transition-transform">.</span>
+          <Link to="/" className="text-xl font-bold text-white group" onClick={() => setIsMobileMenuOpen(false)}>
+            Mithuneesh <span className="text-white/60 inline-block group-hover:translate-x-1 transition-transform">.</span>
           </Link>
           
           {/* Desktop Nav */}
@@ -31,8 +31,8 @@ const Navbar = () => {
                 to={link.href}
                 className={`px-4 py-2 rounded-full text-[13px] font-bold uppercase tracking-tight transition-all ${
                   location.pathname === link.href 
-                  ? 'bg-secondary-blue text-primary-blue' 
-                  : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-white text-primary-blue shadow-sm' 
+                  : 'text-white/70 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {link.name}
@@ -42,7 +42,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden p-2 text-slate-600 hover:text-primary-blue transition-colors focus:outline-none"
+            className="lg:hidden p-2 text-white/80 hover:text-white transition-colors focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Nav Dropdown */}
-        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4 border-t border-slate-100 pt-4' : 'max-h-0 opacity-0'}`}>
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ${isMobileMenuOpen ? 'max-h-96 opacity-100 mt-4 border-t border-white/20 pt-4' : 'max-h-0 opacity-0'}`}>
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
@@ -60,8 +60,8 @@ const Navbar = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`px-4 py-3 rounded-2xl text-sm font-bold uppercase tracking-tight transition-all ${
                   location.pathname === link.href 
-                  ? 'bg-secondary-blue text-primary-blue' 
-                  : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+                  ? 'bg-white text-primary-blue shadow-sm' 
+                  : 'text-white/70 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {link.name}
