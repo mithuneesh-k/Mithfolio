@@ -1,5 +1,6 @@
 import React from 'react';
 import { GraduationCap, Award, Users } from 'lucide-react';
+import LiveStats from './LiveStats';
 
 const About = () => {
   const education = [
@@ -50,7 +51,9 @@ const About = () => {
           </div>
         </div>
 
-        <div className="pt-20 border-t border-slate-100">
+        <LiveStats />
+
+        <div className="pt-20 mt-20 border-t border-slate-100">
           <h2 className="text-sm font-bold tracking-[0.2em] text-primary-blue uppercase mb-12 text-center">Academic Foundation</h2>
           <div className="grid gap-8 max-w-4xl mx-auto">
             {education.map((item, idx) => (
