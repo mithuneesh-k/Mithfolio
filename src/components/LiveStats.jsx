@@ -1,59 +1,94 @@
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Code2, Activity, GitCommit, GitPullRequest, Trophy, Users } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Github, Linkedin, Code2, Activity, GitCommit, Trophy, Users } from 'lucide-react';
 
-const LiveStats = () => {
-  const [githubData, setGithubData] = useState({ repos: 0, followers: 0, loading: true });
-  const [leetcodeData, setLeetcodeData] = useState({ solved: 0, easy: 0, medium: 0, hard: 0, loading: true });
-  // LinkedIn doesn't offer a public unauthenticated API, so we use static/placeholder data 
-  // but style it to match the real-time aesthetic.
+// Custom hook for aggressive optimization (Caching, Parallel Fetching, Abort Controllers)
+const useLiveStats = () => {
+  const [githubData, setGithubData] = useState(() => {
+    const cached = localStorage.getItem('github_stats');
+    return cached ? { ...JSON.parse(cached), loading: false } : { repos: 0, followers: 0, loading: true };
+  });
+
+  const [leetcodeData, setLeetcodeData] = useState(() => {
+    const cached = localStorage.getItem('leetcode_stats');
+    return cached ? { ...JSON.parse(cached), loading: false } : { solved: 0, easy: 0, medium: 0, hard: 0, loading: true };
+  });
+
   const [linkedinData] = useState({ connections: '500+', followers: '1.2K', loading: false });
 
+  const abortControllerRef = useRef(null);
+
   const fetchStats = async () => {
+    // Cancel any ongoing requests if a new one fires
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    abortControllerRef.current = new AbortController();
+    const signal = abortControllerRef.current.signal;
+
     try {
-      // Fetch GitHub Data
-      const ghRes = await fetch('https://api.github.com/users/mithuneesh-k');
-      if (ghRes.ok) {
-        const ghData = await ghRes.json();
-        setGithubData({
-          repos: ghData.public_repos,
-          followers: ghData.followers,
-          loading: false
-        });
-      } else {
+      // 1. Parallelize Network Requests (cuts wait time in half)
+      const [ghResult, lcResult] = await Promise.allSettled([
+        fetch('https://api.github.com/users/mithuneesh-k', { signal }).then(res => {
+          if (!res.ok) throw new Error('GitHub API Error');
+          return res.json();
+        }),
+        fetch('https://alfa-leetcode-api.onrender.com/mithuneesh-k/solved', { signal }).then(res => {
+          if (!res.ok) throw new Error('LeetCode API Error');
+          return res.json();
+        })
+      ]);
+
+      // 2. Process GitHub Data
+      if (ghResult.status === 'fulfilled') {
+        const ghData = ghResult.value;
+        const newGhState = { repos: ghData.public_repos, followers: ghData.followers, loading: false };
+        setGithubData(newGhState);
+        localStorage.setItem('github_stats', JSON.stringify(newGhState)); // Cache
+      } else if (ghResult.reason.name !== 'AbortError') {
         setGithubData(prev => ({ ...prev, loading: false }));
       }
 
-      // Fetch LeetCode Data
-      const lcRes = await fetch('https://alfa-leetcode-api.onrender.com/mithuneesh-k/solved');
-      if (lcRes.ok) {
-        const lcData = await lcRes.json();
-        setLeetcodeData({
+      // 3. Process LeetCode Data
+      if (lcResult.status === 'fulfilled') {
+        const lcData = lcResult.value;
+        const newLcState = {
           solved: lcData.solvedProblem,
           easy: lcData.easySolved,
           medium: lcData.mediumSolved,
           hard: lcData.hardSolved,
           loading: false
-        });
-      } else {
+        };
+        setLeetcodeData(newLcState);
+        localStorage.setItem('leetcode_stats', JSON.stringify(newLcState)); // Cache
+      } else if (lcResult.reason.name !== 'AbortError') {
         setLeetcodeData(prev => ({ ...prev, loading: false }));
       }
     } catch (error) {
-      console.error("Error fetching live stats:", error);
-      setGithubData(prev => ({ ...prev, loading: false }));
-      setLeetcodeData(prev => ({ ...prev, loading: false }));
+      if (error.name !== 'AbortError') {
+        console.error("Critical error in live stats:", error);
+      }
     }
   };
 
   useEffect(() => {
     fetchStats();
-    
-    // Auto-update every 5 minutes to stay within API rate limits
+
+    // Background refetch every 5 minutes
     const interval = setInterval(() => {
       fetchStats();
     }, 5 * 60 * 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (abortControllerRef.current) abortControllerRef.current.abort(); // Cleanup on unmount
+    };
   }, []);
+
+  return { githubData, leetcodeData, linkedinData };
+};
+
+const LiveStats = () => {
+  const { githubData, leetcodeData, linkedinData } = useLiveStats();
 
   return (
     <div className="pt-20 border-t border-slate-100">
