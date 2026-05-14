@@ -1,5 +1,5 @@
 import React from 'react';
-import GitHubCalendar from 'react-github-calendar';
+import { GitHubCalendar } from 'react-github-calendar';
 import { Activity, Flame, Trophy, Github as GithubIcon, Code2 } from 'lucide-react';
 import LiveStats from './LiveStats';
 

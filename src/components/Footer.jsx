@@ -36,6 +36,7 @@ const Footer = () => {
                 <a href="/about" className="hover:text-primary-blue transition-colors">About</a>
                 <a href="/skills" className="hover:text-primary-blue transition-colors">Skills</a>
                 <a href="/experience" className="hover:text-primary-blue transition-colors">Experience</a>
+                <a href="/performance" className="hover:text-primary-blue transition-colors">Performance</a>
                 <a href="/certificates" className="hover:text-primary-blue transition-colors">Certificates</a>
                 <a href="/projects" className="hover:text-primary-blue transition-colors">Projects</a>
              </nav>
