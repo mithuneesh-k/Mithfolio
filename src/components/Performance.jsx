@@ -316,6 +316,33 @@ const Performance = () => {
             </div>
           </div>
 
+          {/* ================= DUOLINGO SECTION ================= */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-xl bg-green-500 text-white flex items-center justify-center">
+                <Activity className="w-5 h-5" /> {/* Use Activity as fallback for Duolingo icon, since Lucide doesn't have an owl */}
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900">Language Learning</h3>
+            </div>
+            
+            <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+              {/* Duolingo Heatmap / Stats Card */}
+              <div className="lg:col-span-3 bg-white p-8 rounded-3xl border border-green-100/50 shadow-sm hover:shadow-xl hover:shadow-green-500/5 transition-all duration-500 relative group overflow-hidden flex flex-col justify-center items-center">
+                <div className="absolute -right-10 -top-10 w-32 h-32 bg-green-500/5 rounded-full blur-3xl group-hover:bg-green-500/10 transition-all"></div>
+                <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Duolingo Stats</h4>
+                
+                <div className="w-full flex justify-center items-center rounded-2xl overflow-hidden relative z-10">
+                  <img 
+                    src="https://duolingo-stats-card.vercel.app/api?username=mithuneesh-k&theme=transparent&hide_border=true" 
+                    alt="Duolingo Stats" 
+                    className="w-full object-contain max-w-[500px] hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+                <p className="text-xs text-slate-400 mt-4 text-center">Note: If your Duolingo username is not 'mithuneesh-k', you can update the username prop in the source code.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
