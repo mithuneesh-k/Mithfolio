@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedPage from './AnimatedPage';
 import { 
   BrainCircuit, 
   Code2, 
@@ -107,7 +108,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="min-h-screen py-24 bg-white">
+    <AnimatedPage className="min-h-screen py-24 bg-white">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="max-w-3xl mb-24">
@@ -187,7 +188,7 @@ const Skills = () => {
 
 
       </div>
-    </section>
+    </AnimatedPage>
   );
 };
 

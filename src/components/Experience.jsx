@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedPage from './AnimatedPage';
 import { Briefcase, Calendar, MapPin, ArrowUpRight, Mail } from 'lucide-react';
 
 const Experience = () => {
@@ -15,7 +16,7 @@ const Experience = () => {
   ];
 
   return (
-    <section className="min-h-[calc(100vh-80px)] py-20 bg-white">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-20">
           <h2 className="text-sm font-bold tracking-[0.3em] text-primary-blue uppercase mb-4">Trajectory</h2>
@@ -78,7 +79,7 @@ const Experience = () => {
            </a>
         </div>
       </div>
-    </section>
+    </AnimatedPage>
   );
 };
 

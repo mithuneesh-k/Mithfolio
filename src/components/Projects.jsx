@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AnimatedPage from './AnimatedPage';
 import { Github, ArrowUpRight, Star, GitFork, ExternalLink, Code2, Activity, Terminal } from 'lucide-react';
 
 const languageColors = {
@@ -18,21 +19,19 @@ const getLanguageStyle = (lang) => {
 
 // Custom hook to fetch Github Repos with caching
 const useGithubRepos = (username) => {
-  const [repos, setRepos] = useState(() => {
-    const cached = localStorage.getItem('github_repos');
-    return cached ? JSON.parse(cached) : [];
-  });
-  const [loading, setLoading] = useState(!localStorage.getItem('github_repos'));
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=9`);
+        // Fetch 100 to ensure we capture all non-fork repos after filtering
+        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
         if (!response.ok) throw new Error('Failed to fetch repositories');
         const data = await response.json();
         
-        // Filter out forks if you only want original projects, or keep them. We'll keep all for now but prioritize non-forks.
-        const filteredData = data.filter(repo => !repo.fork);
+        // Filter out forks and take the top 9 most recently updated original projects
+        const filteredData = data.filter(repo => !repo.fork).slice(0, 9);
         
         setRepos(filteredData);
         localStorage.setItem('github_repos', JSON.stringify(filteredData));
@@ -53,7 +52,7 @@ const Projects = () => {
   const { repos, loading } = useGithubRepos('mithuneesh-k');
 
   return (
-    <section className="min-h-[calc(100vh-80px)] py-20 bg-slate-50 relative overflow-hidden">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-slate-50 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -right-[5%] w-[40%] h-[40%] rounded-full bg-primary-blue/5 blur-[120px]"></div>
@@ -158,7 +157,7 @@ const Projects = () => {
           </div>
         )}
       </div>
-    </section>
+    </AnimatedPage>
   );
 };
 
