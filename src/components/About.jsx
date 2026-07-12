@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedPage from './AnimatedPage';
 import { GraduationCap, Award, Users } from 'lucide-react';
 
 const About = () => {
@@ -30,7 +31,7 @@ const About = () => {
   ];
 
   return (
-    <section className="min-h-[calc(100vh-80px)] py-20 bg-white">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid lg:grid-cols-3 gap-16 items-start mb-24">
           <div className="lg:col-span-1">
@@ -85,7 +86,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedPage>
   );
 };
 

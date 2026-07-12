@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import AnimatedPage from './AnimatedPage';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Activity, Github as GithubIcon, Code2, GitCommit, Trophy, Users, Linkedin } from 'lucide-react';
 
@@ -97,7 +98,7 @@ const Performance = () => {
   };
 
   return (
-    <section className="min-h-[calc(100vh-80px)] py-20 bg-slate-50 relative overflow-hidden">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-slate-50 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/5 blur-[120px]"></div>
@@ -345,7 +346,7 @@ const Performance = () => {
 
         </div>
       </div>
-    </section>
+    </AnimatedPage>
   );
 };
 

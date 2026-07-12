@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedPage from './AnimatedPage';
 import { Award, CheckCircle2, Star, ExternalLink } from 'lucide-react';
 
 const Certificates = () => {
@@ -60,7 +61,7 @@ const Certificates = () => {
   ];
 
   return (
-    <section className="min-h-[calc(100vh-80px)] py-20 bg-white text-slate-900">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white text-slate-900">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-[0.3em] text-primary-blue uppercase mb-4 text-center mx-auto">Credentials</h2>
@@ -109,7 +110,7 @@ const Certificates = () => {
           ))}
         </div>
       </div>
-    </section>
+    </AnimatedPage>
   );
 };
 
