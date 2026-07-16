@@ -185,7 +185,7 @@ const InfinityScroll = ({ initialPath = '/' }) => {
             className="group relative flex items-center justify-end"
             style={{ width: 48, height: 20 }}
           >
-            <span className="absolute right-7 text-[10px] font-bold uppercase tracking-widest text-slate-600 bg-white border border-slate-100 shadow-md rounded-full px-2 py-0.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
+            <span className="absolute right-7 text-[10px] font-bold uppercase tracking-widest text-slate-600 bg-white dark:bg-blue-950 border border-slate-100 dark:border-blue-800 shadow-md rounded-full px-2 py-0.5 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
               {s.label}
             </span>
             <span

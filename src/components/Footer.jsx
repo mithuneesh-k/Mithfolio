@@ -3,12 +3,12 @@ import { Github, Linkedin, Mail, Code } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="py-20 bg-white border-t border-slate-100 font-inter">
+    <footer className="py-20 bg-white dark:bg-blue-950 border-t border-slate-100 dark:border-blue-800 font-inter">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-             <h4 className="text-2xl font-bold text-slate-900 mb-6 underline underline-offset-8 decoration-primary-blue/30 italic">Mithuneesh.</h4>
-             <p className="text-slate-500 max-w-sm mb-8 leading-relaxed font-medium">
+             <h4 className="text-2xl font-bold text-slate-900 dark:text-blue-50 mb-6 underline underline-offset-8 decoration-primary-blue/30 italic">Mithuneesh.</h4>
+             <p className="text-slate-500 dark:text-blue-300 max-w-sm mb-8 leading-relaxed font-medium">
                 A Computer Science student focused on building clean, efficient, and thoughtful digital solutions across AI and Software Engineering.
              </p>
              <div className="flex gap-4">
@@ -22,7 +22,7 @@ const Footer = () => {
                    key={idx} 
                    href={social.href} 
                    target="_blank"
-                   className="group w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center text-slate-400 hover:text-primary-blue hover:border-primary-blue hover:bg-blue-50 transition-all shadow-sm"
+                   className="group w-10 h-10 rounded-full border border-slate-100 dark:border-blue-800 flex items-center justify-center text-slate-400 hover:text-primary-blue hover:border-primary-blue hover:bg-blue-50 transition-all shadow-sm"
                  >
                    {social.icon}
                  </a>
@@ -31,7 +31,7 @@ const Footer = () => {
           </div>
           <div className="md:text-right">
              <div className="text-xs font-black text-slate-300 uppercase tracking-[0.3em] mb-6">Navigation</div>
-             <nav className="flex flex-col gap-3 font-bold text-slate-500 uppercase text-[11px] tracking-widest">
+             <nav className="flex flex-col gap-3 font-bold text-slate-500 dark:text-blue-300 uppercase text-[11px] tracking-widest">
                 <a href="/" className="hover:text-primary-blue transition-colors">Home</a>
                 <a href="/about" className="hover:text-primary-blue transition-colors">About</a>
                 <a href="/skills" className="hover:text-primary-blue transition-colors">Skills</a>

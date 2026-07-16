@@ -108,7 +108,7 @@ const Skills = () => {
   ];
 
   return (
-    <AnimatedPage className="min-h-screen py-24 bg-white">
+    <AnimatedPage className="min-h-screen py-24 bg-white dark:bg-blue-950">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="max-w-3xl mb-24">
@@ -116,10 +116,10 @@ const Skills = () => {
              <span className="h-[1px] w-8 bg-primary-blue/30"></span>
              Expertise Matrix
           </h2>
-          <h3 className="text-5xl md:text-7xl font-bold text-slate-900 mb-8 !leading-tight tracking-tighter">
+          <h3 className="text-5xl md:text-7xl font-bold text-slate-900 dark:text-blue-50 mb-8 !leading-tight tracking-tighter">
             Architecting solutions with <span className="text-primary-blue italic">precision.</span>
           </h3>
-          <p className="text-lg text-slate-500 font-medium">
+          <p className="text-lg text-slate-500 dark:text-blue-300 font-medium">
             Bridging complex software engineering with multilingual communication and strategic leadership.
           </p>
         </div>
@@ -129,14 +129,14 @@ const Skills = () => {
            <div className="grid lg:grid-cols-3 gap-12">
               {technicalGroups.map((group, idx) => (
                 <div key={idx} className="space-y-10">
-                  <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
+                  <div className="flex items-center gap-3 border-b border-slate-100 dark:border-blue-800 pb-4">
                     {group.icon}
-                    <h4 className="text-lg font-bold text-slate-900 uppercase tracking-tight">{group.title}</h4>
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-blue-50 uppercase tracking-tight">{group.title}</h4>
                   </div>
                   <div className="space-y-6">
                     {group.skills.map((skill, sIdx) => (
                       <div key={sIdx} className="group flex items-start gap-5">
-                        <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-center p-2.5 group-hover:bg-white group-hover:border-primary-blue/30 group-hover:shadow-lg transition-all duration-300">
+                        <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-blue-900/50 border border-slate-100 dark:border-blue-800 flex items-center justify-center p-2.5 group-hover:bg-white dark:bg-blue-950 group-hover:border-primary-blue/30 group-hover:shadow-lg transition-all duration-300">
                            {skill.logo ? (
                              <img src={skill.logo} alt={skill.name} className="w-full h-full grayscale group-hover:grayscale-0 transition-all opacity-60 group-hover:opacity-100" />
                            ) : (
@@ -146,7 +146,7 @@ const Skills = () => {
                            )}
                         </div>
                         <div>
-                           <div className="text-sm font-bold text-slate-900 uppercase tracking-wide group-hover:text-primary-blue transition-colors">{skill.name}</div>
+                           <div className="text-sm font-bold text-slate-900 dark:text-blue-50 uppercase tracking-wide group-hover:text-primary-blue transition-colors">{skill.name}</div>
                            <div className="text-xs font-semibold text-slate-400 mt-1 uppercase tracking-widest">{skill.desc}</div>
                         </div>
                       </div>
@@ -158,22 +158,22 @@ const Skills = () => {
         </div>
 
         {/* Strategic Section */}
-        <div className="pt-24 border-t border-slate-100">
+        <div className="pt-24 border-t border-slate-100 dark:border-blue-800">
            <div className="grid md:grid-cols-3 gap-8">
               {businessGroups.map((group, idx) => (
-                <div key={idx} className="p-8 rounded-3xl bg-slate-50/50 border border-slate-100 flex flex-col">
+                <div key={idx} className="p-8 rounded-3xl bg-slate-50/50 border border-slate-100 dark:border-blue-800 flex flex-col">
                   <div className="flex items-center gap-3 mb-8">
                     {group.icon}
-                    <h5 className="text-base font-bold text-slate-900 uppercase tracking-widest">{group.title}</h5>
+                    <h5 className="text-base font-bold text-slate-900 dark:text-blue-50 uppercase tracking-widest">{group.title}</h5>
                   </div>
                   <div className="grid gap-4 flex-grow">
                     {group.skills.map((skill, sIdx) => (
-                      <div key={sIdx} className="flex items-center justify-between group p-3 rounded-xl hover:bg-white hover:shadow-sm transition-all border border-transparent hover:border-slate-100">
+                      <div key={sIdx} className="flex items-center justify-between group p-3 rounded-xl hover:bg-white dark:bg-blue-950 hover:shadow-sm transition-all border border-transparent hover:border-slate-100 dark:border-blue-800">
                          <div className="flex items-center gap-3">
                             <div className="text-slate-300 group-hover:text-primary-blue transition-colors text-lg">
                                {skill.icon}
                             </div>
-                            <span className="text-[11px] font-black text-slate-600 group-hover:text-slate-900 uppercase tracking-widest transition-colors">{skill.name}</span>
+                            <span className="text-[11px] font-black text-slate-600 group-hover:text-slate-900 dark:text-blue-50 uppercase tracking-widest transition-colors">{skill.name}</span>
                          </div>
                          {skill.desc && (
                            <span className="text-[9px] font-bold text-slate-400 uppercase italic opacity-0 group-hover:opacity-100 transition-opacity translate-y-1 group-hover:translate-y-0 duration-300">{skill.desc}</span>

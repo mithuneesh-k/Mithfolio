@@ -22,7 +22,7 @@ const PageNav = () => {
   if (!prev && !next) return null;
 
   return (
-    <div className="border-t border-slate-100 bg-white">
+    <div className="border-t border-slate-100 dark:border-blue-800 bg-white dark:bg-blue-950">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="flex items-stretch justify-between min-h-[80px]">
           {/* Prev */}

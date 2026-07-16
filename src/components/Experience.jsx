@@ -16,11 +16,11 @@ const Experience = () => {
   ];
 
   return (
-    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white dark:bg-blue-950">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-20">
           <h2 className="text-sm font-bold tracking-[0.3em] text-primary-blue uppercase mb-4">Trajectory</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900">Professional Experience</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-blue-50">Professional Experience</h3>
         </div>
 
         <div className="space-y-12 max-w-4xl mx-auto">
@@ -29,16 +29,16 @@ const Experience = () => {
               <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-secondary-blue border border-primary-blue/20 flex items-center justify-center text-primary-blue z-10">
                 <Briefcase className="w-4 h-4" />
               </div>
-              <div className="bg-slate-50/50 p-8 md:p-10 rounded-[2.5rem] border border-slate-50 hover:bg-white hover:border-primary-blue/20 hover:shadow-2xl hover:shadow-blue-500/5 transition-all">
+              <div className="bg-slate-50/50 p-8 md:p-10 rounded-[2.5rem] border border-slate-50 hover:bg-white dark:bg-blue-950 hover:border-primary-blue/20 hover:shadow-2xl hover:shadow-blue-500/5 transition-all">
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
                   <div>
-                    <h4 className="text-2xl font-bold text-slate-900 mb-1 group-hover:text-primary-blue transition-colors">
+                    <h4 className="text-2xl font-bold text-slate-900 dark:text-blue-50 mb-1 group-hover:text-primary-blue transition-colors">
                       {exp.role}
                     </h4>
                     <div className="flex items-center gap-2 text-primary-blue font-bold uppercase tracking-wider text-sm mb-4">
                       {exp.company}
                       <span className="text-slate-300">·</span>
-                      <span className="text-slate-500 font-medium">Freelance</span>
+                      <span className="text-slate-500 dark:text-blue-300 font-medium">Freelance</span>
                     </div>
                     <div className="flex flex-wrap gap-4 text-xs font-bold text-slate-400 uppercase tracking-widest">
                        <div className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" /> {exp.period}</div>
@@ -46,7 +46,7 @@ const Experience = () => {
                     </div>
                   </div>
                   <div className="flex shrink-0">
-                     <div className="w-16 h-16 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-3xl shadow-sm italic font-black text-primary-blue/20">
+                     <div className="w-16 h-16 rounded-2xl bg-white dark:bg-blue-950 border border-slate-100 dark:border-blue-800 flex items-center justify-center text-3xl shadow-sm italic font-black text-primary-blue/20">
                         IS
                      </div>
                   </div>
@@ -58,7 +58,7 @@ const Experience = () => {
 
                 <div className="flex flex-wrap gap-2">
                    {exp.skills.map(skill => (
-                     <span key={skill} className="px-4 py-1.5 rounded-full bg-white border border-slate-100 text-slate-500 text-[10px] font-black uppercase tracking-widest shadow-sm">
+                     <span key={skill} className="px-4 py-1.5 rounded-full bg-white dark:bg-blue-950 border border-slate-100 dark:border-blue-800 text-slate-500 dark:text-blue-300 text-[10px] font-black uppercase tracking-widest shadow-sm">
                         {skill}
                      </span>
                    ))}

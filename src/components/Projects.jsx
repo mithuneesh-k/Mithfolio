@@ -52,7 +52,7 @@ const Projects = () => {
   const { repos, loading } = useGithubRepos('mithuneesh-k');
 
   return (
-    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-slate-50 relative overflow-hidden">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-slate-50 dark:bg-blue-900/50 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[10%] -right-[5%] w-[40%] h-[40%] rounded-full bg-primary-blue/5 blur-[120px]"></div>
@@ -65,9 +65,9 @@ const Projects = () => {
             <h2 className="text-sm font-bold tracking-[0.2em] text-primary-blue uppercase mb-4 flex items-center gap-2">
               <Activity className="w-4 h-4" /> Live from GitHub
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-0 leading-[1.1]">Latest Projects</h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-blue-50 mb-0 leading-[1.1]">Latest Projects</h3>
           </div>
-          <p className="text-slate-500 font-medium max-w-xs md:text-right hidden lg:block">
+          <p className="text-slate-500 dark:text-blue-300 font-medium max-w-xs md:text-right hidden lg:block">
             Real-time fetch of my open-source contributions and personal projects directly from GitHub.
           </p>
         </div>
@@ -76,7 +76,7 @@ const Projects = () => {
           /* Skeleton Loader */
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((sk) => (
-              <div key={sk} className="h-80 bg-white rounded-3xl border border-slate-100 p-8 animate-pulse flex flex-col">
+              <div key={sk} className="h-80 bg-white dark:bg-blue-950 rounded-3xl border border-slate-100 dark:border-blue-800 p-8 animate-pulse flex flex-col">
                 <div className="w-12 h-12 bg-slate-100 rounded-xl mb-6"></div>
                 <div className="h-6 bg-slate-100 rounded w-3/4 mb-4"></div>
                 <div className="h-4 bg-slate-100 rounded w-full mb-2"></div>
@@ -97,19 +97,19 @@ const Projects = () => {
               return (
                 <div 
                   key={repo.id} 
-                  className="group bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-primary-blue/30 transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-1 relative"
+                  className="group bg-white dark:bg-blue-950 rounded-3xl overflow-hidden border border-slate-100 dark:border-blue-800 hover:border-primary-blue/30 transition-all duration-500 flex flex-col hover:shadow-2xl hover:shadow-blue-500/5 hover:-translate-y-1 relative"
                 >
                   {/* Glassmorphism Header Area based on language */}
                   <div className={`h-24 bg-gradient-to-br ${langStyle} relative overflow-hidden flex items-center px-8 border-b`}>
                     <div className="absolute -right-4 -top-8 w-32 h-32 bg-white/20 rounded-full blur-2xl group-hover:bg-white/40 transition-all duration-500"></div>
-                    <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-white/50 relative z-10 group-hover:scale-110 transition-transform duration-500">
+                    <div className="w-12 h-12 bg-white dark:bg-blue-950 rounded-2xl shadow-sm flex items-center justify-center border border-white/50 relative z-10 group-hover:scale-110 transition-transform duration-500">
                       <Terminal className="w-6 h-6 currentColor" />
                     </div>
                   </div>
 
                   <div className="p-8 flex-grow flex flex-col">
                     <div className="flex items-center justify-between gap-4 mb-4">
-                      <h4 className="text-xl font-bold text-slate-900 group-hover:text-primary-blue transition-colors truncate">
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-blue-50 group-hover:text-primary-blue transition-colors truncate">
                         {repo.name}
                       </h4>
                       {repo.homepage && (
@@ -127,26 +127,26 @@ const Projects = () => {
                       <div className="flex gap-4">
                         {/* Language Tag */}
                         {repo.language && (
-                          <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
+                          <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500 dark:text-blue-300 bg-slate-50 dark:bg-blue-900/50 px-3 py-1 rounded-full border border-slate-100 dark:border-blue-800">
                             <span className={`w-2 h-2 rounded-full bg-gradient-to-br ${langStyle.split(' ')[0]}`}></span>
                             {repo.language}
                           </span>
                         )}
                         {/* Stars */}
-                        <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500">
+                        <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500 dark:text-blue-300">
                           <Star className="w-3.5 h-3.5 text-yellow-500" />
                           {repo.stargazers_count}
                         </span>
                         {/* Forks */}
                         {repo.forks_count > 0 && (
-                          <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500">
+                          <span className="flex items-center gap-1.5 text-xs font-bold text-slate-500 dark:text-blue-300">
                             <GitFork className="w-3.5 h-3.5 text-slate-400" />
                             {repo.forks_count}
                           </span>
                         )}
                       </div>
                       
-                      <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-primary-blue group-hover:text-white transition-all duration-300">
+                      <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-slate-50 dark:bg-blue-900/50 flex items-center justify-center text-slate-400 group-hover:bg-primary-blue group-hover:text-white transition-all duration-300">
                          <ArrowUpRight className="w-4 h-4" />
                       </a>
                     </div>

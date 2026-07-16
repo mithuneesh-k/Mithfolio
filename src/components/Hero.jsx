@@ -15,13 +15,13 @@ const Hero = () => {
           Available for new projects
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-8 !leading-[1.1] tracking-tighter">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-blue-50 mb-8 !leading-[1.1] tracking-tighter">
           Building software that{' '}
           <span className="text-primary-blue font-serif italic">actually helps.</span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-500 mb-12 leading-relaxed max-w-2xl font-medium">
-          I'm <span className="font-bold text-slate-900">Mithuneesh</span>, a computer science
+        <p className="text-lg md:text-xl text-slate-500 dark:text-blue-300 mb-12 leading-relaxed max-w-2xl font-medium">
+          I'm <span className="font-bold text-slate-900 dark:text-blue-50">Mithuneesh</span>, a computer science
           student exploring <strong>AI, Machine Learning</strong>, and how to build digital
           products from the ground up.
         </p>
@@ -47,7 +47,7 @@ const Hero = () => {
   );
 
   return (
-    <AnimatedPage className="min-h-[calc(100vh-80px)] flex items-center justify-center bg-white relative overflow-hidden">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] flex items-center justify-center bg-white dark:bg-blue-950 relative overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-blue/5 rounded-full blur-[120px] pointer-events-none" />
       {content}
