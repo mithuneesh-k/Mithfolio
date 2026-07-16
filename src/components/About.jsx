@@ -31,16 +31,16 @@ const About = () => {
   ];
 
   return (
-    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white">
+    <AnimatedPage className="min-h-[calc(100vh-80px)] py-20 bg-white dark:bg-blue-950">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid lg:grid-cols-3 gap-16 items-start mb-24">
           <div className="lg:col-span-1">
             <h2 className="text-sm font-bold tracking-[0.2em] text-primary-blue uppercase mb-6">Identity</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1] tracking-tighter">My Journey <span className="text-slate-300 font-light">&</span> <br/><span className="text-primary-blue italic font-serif">Philosophy</span></h3>
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-blue-50 leading-[1.1] tracking-tighter">My Journey <span className="text-slate-300 font-light">&</span> <br/><span className="text-primary-blue italic font-serif">Philosophy</span></h3>
           </div>
-          <div className="lg:col-span-2 space-y-8 text-lg text-slate-500 font-medium leading-relaxed">
+          <div className="lg:col-span-2 space-y-8 text-lg text-slate-500 dark:text-blue-300 font-medium leading-relaxed">
             <p>
-              Hi, I'm <span className="text-slate-900 font-bold">Mithuneesh Kanagaraj</span>. I'm a computer science student who genuinely loves building things that work well. Lately, I've been diving deep into <strong>Machine Learning and AI</strong>, figuring out how to build systems that automate the boring stuff and solve real problems.
+              Hi, I'm <span className="text-slate-900 dark:text-blue-50 font-bold">Mithuneesh Kanagaraj</span>. I'm a computer science student who genuinely loves building things that work well. Lately, I've been diving deep into <strong>Machine Learning and AI</strong>, figuring out how to build systems that automate the boring stuff and solve real problems.
             </p>
             <p>
               For me, coding is just a tool to get ideas off the ground. Whether I'm putting together a mobile app for health tracking or writing a Python script to speed up my own workflow, I care a lot about the details. I like to keep things clean, simple, and actually useful.
@@ -51,7 +51,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="pt-20 border-t border-slate-100">
+        <div className="pt-20 border-t border-slate-100 dark:border-blue-800">
           <h2 className="text-sm font-bold tracking-[0.2em] text-primary-blue uppercase mb-12 text-center">Academic Foundation</h2>
           <div className="grid gap-8 max-w-4xl mx-auto">
             {education.map((item, idx) => (
@@ -62,11 +62,11 @@ const About = () => {
                 <div className="bg-slate-50/50 p-8 rounded-3xl border border-slate-50 hover:border-primary-blue/20 transition-all group">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                     <div>
-                      <h4 className="text-xl font-bold text-slate-900 group-hover:text-primary-blue transition-colors">{item.school}</h4>
+                      <h4 className="text-xl font-bold text-slate-900 dark:text-blue-50 group-hover:text-primary-blue transition-colors">{item.school}</h4>
                       <p className="text-primary-blue font-semibold">{item.degree}</p>
                     </div>
                     <div className="text-right">
-                      <span className="inline-block px-4 py-1 rounded-full bg-white border border-slate-100 text-sm font-bold text-slate-500 shadow-sm">{item.period}</span>
+                      <span className="inline-block px-4 py-1 rounded-full bg-white dark:bg-blue-950 border border-slate-100 dark:border-blue-800 text-sm font-bold text-slate-500 dark:text-blue-300 shadow-sm">{item.period}</span>
                       <div className="text-primary-blue font-black mt-2">Grade: {item.grade}</div>
                     </div>
                   </div>
