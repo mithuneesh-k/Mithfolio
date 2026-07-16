@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --color-primary-blue: #0388fc;
   --color-secondary-blue: #eff6ff;
@@ -10,16 +12,53 @@
 
 @layer base {
   body {
-    @apply bg-white text-text-main font-inter;
+    @apply bg-white text-text-main font-inter transition-colors duration-300 dark:bg-blue-950 dark:text-blue-100;
     -webkit-font-smoothing: antialiased;
   }
   
-  h1, h2, h3, h4 {
-    @apply tracking-tight font-semibold text-slate-900;
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-semibold text-slate-900 dark:text-white transition-colors duration-300;
   }
 
   section {
     @apply py-20 px-6;
+  }
+}
+
+@layer utilities {
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  :is(.dark .bg-white) {
+    background-color: var(--color-blue-950);
+  }
+  
+  .bg-slate-50 {
+    background-color: var(--color-slate-50);
+  }
+  :is(.dark .bg-slate-50) {
+    background-color: var(--color-blue-900);
+  }
+
+  .border-slate-100 {
+    border-color: var(--color-slate-100);
+  }
+  :is(.dark .border-slate-100) {
+    border-color: var(--color-blue-800);
+  }
+
+  .text-slate-900 {
+    color: var(--color-slate-900);
+  }
+  :is(.dark .text-slate-900) {
+    color: var(--color-white);
+  }
+
+  .text-slate-500 {
+    color: var(--color-slate-500);
+  }
+  :is(.dark .text-slate-500) {
+    color: var(--color-blue-300);
   }
 }
 
@@ -29,6 +68,6 @@
   }
 
   .btn-secondary {
-    @apply px-6 py-3 border border-slate-200 text-slate-600 rounded-lg font-medium transition-all hover:bg-slate-50 active:scale-95;
+    @apply px-6 py-3 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg font-medium transition-all hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95;
   }
 }

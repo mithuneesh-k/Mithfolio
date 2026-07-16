@@ -2,10 +2,11 @@ import React, { useState, useEffect, memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
   Menu, X, Infinity, Home, User, Code2, 
-  Briefcase, Activity, Award, FolderGit2 
+  Briefcase, Activity, Award, FolderGit2, Moon, Sun 
 } from 'lucide-react';
 import { useInfinityMode } from '../context/InfinityModeContext';
 import { useInfinityScroll } from '../context/InfinityScrollContext';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,6 +14,7 @@ const Navbar = () => {
   const location = useLocation();
   const { isInfinityMode, toggleInfinityMode } = useInfinityMode();
   const { activeIdx } = useInfinityScroll();
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   const handleToggle = () => {
     toggleInfinityMode();
@@ -43,7 +45,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-primary-blue shadow-lg sticky top-0 z-50 py-4">
+      <nav className="bg-primary-blue dark:bg-blue-950/95 dark:backdrop-blur-xl shadow-lg sticky top-0 z-50 py-4 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <div className="flex justify-between items-center">
             <Link to="/" className="text-xl font-bold text-white group flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
@@ -64,7 +66,7 @@ const Navbar = () => {
                     to={link.href}
                     className={`group flex items-center rounded-full text-[13px] font-bold uppercase tracking-tight transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
                       active
-                        ? 'bg-white text-primary-blue shadow-md px-4 py-2'
+                        ? 'bg-white text-primary-blue shadow-md px-4 py-2 dark:bg-primary-blue dark:text-white dark:shadow-[0_0_15px_rgba(3,136,252,0.4)]'
                         : 'text-white/60 hover:bg-white/15 hover:text-white px-3 py-2'
                     }`}
                   >
@@ -83,6 +85,19 @@ const Navbar = () => {
 
             {/* Right side */}
             <div className="flex items-center gap-2">
+              {/* Dark Mode Toggle */}
+              <button
+                onClick={toggleDarkMode}
+                aria-label={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                className="relative w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/15 focus:outline-none"
+              >
+                {isDarkMode ? (
+                  <Moon className="w-5 h-5 transition-transform duration-300 hover:rotate-12" />
+                ) : (
+                  <Sun className="w-5 h-5 transition-transform duration-300 hover:rotate-90" />
+                )}
+              </button>
+
               {/* Infinity Mode Button */}
               <button
                 onClick={handleToggle}
